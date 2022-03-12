@@ -76,6 +76,7 @@ class Client {
 
     for (let allowCred of getAssert.allowCredentials) {
       allowCred.id = base64url.decode(allowCred.id)
+      allowCred.transports = ["internal"]
     }
 
     return getAssert
