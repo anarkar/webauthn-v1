@@ -146,18 +146,18 @@ class Client {
       const publicKey = Client.preformatMakeCredReq(challenge)
       console.log('REGISTER PUBLIC KEY', publicKey)
 
-      const credential = await navigator.credentials.create({ publicKey })
-      console.log('REGISTER CREDENTIAL', credential)
-
-      return credential;
+      
+      return publicKey;
     } catch (err) {
       console.error(err)
     }
   }
 
-  async completeRegistration(credential) {
+  async completeRegistration(publicKey) {
     try {
-
+      const credential = await navigator.credentials.create({ publicKey })
+      console.log('REGISTER CREDENTIAL', credential)
+      
       const credentialResponse = Client.publicKeyCredentialToJSON(credential)
       console.log('REGISTER RESPONSE', credentialResponse)
 
