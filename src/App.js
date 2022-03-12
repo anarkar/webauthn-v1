@@ -3,7 +3,7 @@
  * @ignore
  */
 import React, { useEffect, useState } from "react";
-import Client from "webauthn/client";
+import Client from "./lib/webauthn/client";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Login from "./Login";
 import Signup from "./Signup";

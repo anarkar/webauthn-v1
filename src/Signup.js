@@ -31,14 +31,15 @@ export default function Signup(props) {
   const onRegister = () => {
     props.auth.register({ name, username }).then((res) => {
       console.log(res, "......response printing");
-      if (res) {
-        localStorage.setItem("userDetails", JSON.stringify({ name, username }));
-        res.status === "ok"
-          ? history("/dashboard")
-          : window.alert("Error occured");
-      } else {
-        window.alert("Error occured");
-      }
+      
+      // if (res) {
+      //   localStorage.setItem("userDetails", JSON.stringify({ name, username }));
+      //   res.status === "ok"
+      //     ? history("/dashboard")
+      //     : window.alert("Error occured");
+      // } else {
+      //   window.alert("Error occured");
+      // }
     });
   };
   return (
@@ -54,7 +55,7 @@ export default function Signup(props) {
         <Row style={{ paddingTop: 80 }}>
           <Col>
             {" "}
-            <h1 style={{ marginBottom: 35 }}>Sign Up New</h1>
+            <h1 style={{ marginBottom: 35 }}>Sign Up</h1>
             <Form>
               <Form.Group>
                 <TextField
