@@ -54,7 +54,7 @@ export default function Signup(props) {
         <Row style={{ paddingTop: 80 }}>
           <Col>
             {" "}
-            <h1 style={{ marginBottom: 35 }}>Sign Up</h1>
+            <h1 style={{ marginBottom: 35 }}>Sign Up New</h1>
             <Form>
               <Form.Group>
                 <TextField
