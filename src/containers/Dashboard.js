@@ -8,7 +8,7 @@ import ModalPopup from "../components/ModalPopup";
 
 export default function Dashboard() {
   const history = useNavigate();
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [userDetail, setUserDetail] = React.useState("");
 
   useEffect(() => {
