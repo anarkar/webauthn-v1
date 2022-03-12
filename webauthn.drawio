@@ -1,0 +1,88 @@
+<mxfile host="65bd71144e" scale="0.5" border="0">
+    <diagram id="qX04N1VFbD8rL1KVzo4F" name="Page-1">
+        <mxGraphModel dx="1966" dy="596" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="4" value="" style="html=1;aspect=fixed;shadow=0;align=center;verticalAlign=top;shape=mxgraph.gcp2.people_security_management;strokeWidth=2;strokeColor=#666666;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="241" y="324.5" width="65.35" height="67" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="" style="verticalLabelPosition=bottom;verticalAlign=top;html=1;shadow=0;dashed=0;strokeWidth=3;shape=mxgraph.android.phone2;strokeColor=#666666;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="167" y="297" width="59" height="117" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="shape=singleArrow;direction=west;whiteSpace=wrap;html=1;strokeColor=#666666;fontColor=#666666;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="346" y="317" width="121" height="37" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="shape=singleArrow;whiteSpace=wrap;html=1;strokeColor=#666666;fontColor=#666666;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="347" y="359" width="120" height="36" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="https://hotels.com" style="shape=ext;margin=3;double=1;whiteSpace=wrap;html=1;align=center;fontSize=17;strokeWidth=2;strokeColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="488" y="324" width="174" height="66" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;strokeColor=#666666;fontColor=#666666;strokeWidth=5;" parent="1" vertex="1">
+                    <mxGeometry x="843" y="297" width="139" height="101" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="Authenticator" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=18;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="181" y="431" width="119" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="Web Application" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontColor=#666666;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="514" y="431" width="141.5" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="Web Server" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontColor=#666666;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="853" y="431" width="119" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="Domain" style="rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=13;fillColor=#666666;align=center;strokeColor=#666666;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="352" y="207" width="113.5" height="27" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="User Details" style="rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=13;fillColor=#666666;align=center;strokeColor=#666666;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="352" y="245" width="113.5" height="27" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="Challenge" style="rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=13;fillColor=#666666;align=center;strokeColor=#666666;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="352" y="282" width="113.5" height="27" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="Credential Id" style="rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=13;fillColor=#666666;align=center;strokeColor=#666666;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="409" width="116.5" height="27" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="Public Key" style="rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=13;fillColor=#666666;align=center;strokeColor=#666666;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="447" width="116.5" height="27" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="Signature" style="rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=13;fillColor=#666666;align=center;strokeColor=#666666;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="350" y="484" width="116.5" height="27" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="" style="shape=singleArrow;direction=west;whiteSpace=wrap;html=1;strokeColor=#666666;fontColor=#666666;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="683" y="317" width="121" height="37" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="" style="shape=singleArrow;whiteSpace=wrap;html=1;strokeColor=#666666;fontColor=#666666;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="684" y="359" width="120" height="36" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="User Details" style="rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=13;fillColor=#666666;align=center;strokeColor=#666666;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="689" y="243" width="113.5" height="27" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="Challenge" style="rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=13;fillColor=#666666;align=center;strokeColor=#666666;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="689" y="281" width="113.5" height="27" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="Credential Id" style="rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=13;fillColor=#666666;align=center;strokeColor=#666666;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="687" y="409" width="116.5" height="27" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="Public Key" style="rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=13;fillColor=#666666;align=center;strokeColor=#666666;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="687" y="447" width="116.5" height="27" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="Signature" style="rounded=1;html=1;shadow=0;dashed=0;whiteSpace=wrap;fontSize=13;fillColor=#666666;align=center;strokeColor=#666666;fontColor=#ffffff;" parent="1" vertex="1">
+                    <mxGeometry x="687" y="484" width="116.5" height="27" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.rectCallout;dx=76.6;dy=48;boundedLbl=1;rounded=1;fontSize=17;strokeWidth=2;perimeterSpacing=0;shadow=0;sketch=0;strokeColor=#666666;fillColor=#E6E6E6;" parent="1" vertex="1">
+                    <mxGeometry x="171" y="121" width="162" height="176" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="&lt;ul style=&quot;font-size: 14px;&quot;&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;Credential Id&lt;/li&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;Private Key&lt;/li&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;Domain name&lt;/li&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;User Details&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=default;fillColor=default;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="178" y="130" width="146" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="" style="whiteSpace=wrap;html=1;shape=mxgraph.basic.rectCallout;dx=76.6;dy=48;boundedLbl=1;rounded=1;fontSize=17;strokeWidth=2;perimeterSpacing=0;shadow=0;sketch=0;strokeColor=#666666;fillColor=#E6E6E6;" vertex="1" parent="1">
+                    <mxGeometry x="870" y="130" width="162" height="176" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="&lt;ul style=&quot;font-size: 14px;&quot;&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;User Details&lt;/li&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;Challenge&lt;/li&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;background-color: rgb(204, 255, 204); font-size: 14px;&quot;&gt;Credential Id&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot;font-size: 14px;&quot;&gt;&lt;span style=&quot;background-color: rgb(204, 255, 204); font-size: 14px;&quot;&gt;Public Key&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;strokeColor=default;fillColor=default;html=1;whiteSpace=wrap;verticalAlign=middle;overflow=hidden;fontSize=14;" vertex="1" parent="1">
+                    <mxGeometry x="877" y="139" width="146" height="110" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
