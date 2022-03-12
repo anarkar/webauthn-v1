@@ -26,19 +26,21 @@ export default function Signup(props) {
   const [showPassword, setShowPassword] = React.useState(false);
   const [publicShared, setPublicShared] = React.useState(false);
   const [biometric, setBiometric] = React.useState(true);
-  const [confirmPassword, setConfirmPassword] = React.useState("");
 
   const onRegister = () => {
     props.auth.register({ name, username }).then((res) => {
       console.log(res, "......response printing");
       props.auth.completeRegistration(res).then((result) => {
-        console.log('-------------', result)
+        console.log("-------------", result);
         if (result) {
-            localStorage.setItem("userDetails", JSON.stringify({ name, username }));
-            res.status === "ok"
-              ? history("/dashboard")
-          : window.alert("Error occured");
-      } else {
+          localStorage.setItem(
+            "userDetails",
+            JSON.stringify({ name, username })
+          );
+          res.status === "ok"
+            ? history("/dashboard")
+            : window.alert("Error occured");
+        } else {
           window.alert("Error occured");
         }
       });
@@ -79,28 +81,6 @@ export default function Signup(props) {
                   label="Password"
                   type="password"
                   onChange={(e) => setPassword(e.target.value)}
-                  InputProps={{
-                    className: "text-field-default",
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <IconButton
-                          onClick={() => setShowPassword(!showPassword)}
-                          edge="end"
-                        >
-                          {showPassword ? <FaEyeSlash /> : <FaEye />}
-                        </IconButton>
-                      </InputAdornment>
-                    ),
-                  }}
-                  fullWidth
-                />
-                <TextField
-                  id="outlined-basic"
-                  variant="outlined"
-                  placeholder="Confirm password"
-                  label="Confirm password"
-                  type="password"
-                  onChange={(e) => setConfirmPassword(e.target.value)}
                   InputProps={{
                     className: "text-field-default",
                     endAdornment: (

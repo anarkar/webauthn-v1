@@ -45,49 +45,15 @@ app.use(bodyParser.json());
 // Create webauthn
 const webauthn = new Webauthn({
   // origin: 'https://tranquil-reaches-89447.herokuapp.com',
-  origin: 'http://localhost:3000',
+  origin: "http://localhost:3000",
   usernameField: "username",
   userFields: {
     username: "username",
     name: "displayName",
   },
   store: new LevelAdapter("db"),
-  // OR
-  // store: {
-  //   put: async (id, value) => {/* return <void> */},
-  //   get: async (id) => {/* return User */},
-  //   search: async (search) => {/* return { [username]: User } */},
-  //   delete: async (id) => {/* return boolean */},
-  // },
-  rpName: "Stranger Labs, Inc.",
+  rpName: "GLoballogic",
 });
-
-// var whitelist = ["http://localhost:3000", "http://localhost:3001"]; //white list consumers
-// var corsOptions = {
-//   origin: function (origin, callback) {
-//     if (whitelist.indexOf(origin) !== -1) {
-//       callback(null, true);
-//     } else {
-//       callback(null, false);
-//     }
-//   },
-//   methods: ["GET", "PUT", "POST", "DELETE", "OPTIONS"],
-//   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-//   credentials: true, //Credentials are cookies, authorization headers or TLS client certificates.
-//   allowedHeaders: [
-//     "Content-Type",
-//     "Authorization",
-//     "X-Requested-With",
-//     "device-remember-token",
-//     "Access-Control-Allow-Origin",
-//     "Origin",
-//     "Accept",
-//   ],
-// };
-
-// app.use(cors(corsOptions));
-
-// Mount webauthn endpoints
 app.use("/webauthn", webauthn.initialize());
 
 // Endpoint without passport
