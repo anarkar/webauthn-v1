@@ -9,6 +9,7 @@
  * @ignore
  */
 import base64url from './base64url'
+import CBOR from 'cbor';
 
 /**
  * Client
@@ -145,14 +146,33 @@ class Client {
       console.log('REGISTER CHALLENGE', challenge)
 
       const publicKey = Client.preformatMakeCredReq(challenge)
+      publicKey['authenticatorSelection'] = {
+        authenticatorAttachment: "platform"
+      }
+      // publicKey['attestation'] = 'none';
+
       console.log('REGISTER PUBLIC KEY', publicKey)
+
 
       const credential = await navigator.credentials.create({ publicKey })
       console.log('REGISTER CREDENTIAL', credential)
-      
+
+      // // decode the clientDataJSON into a utf-8 string
+      // const utf8Decoder = new TextDecoder('utf-8');
+      // const decodedClientData = utf8Decoder.decode(credential.response.clientDataJSON)
+
+      // // parse the string as an object
+      // const clientDataObj = JSON.parse(decodedClientData);
+
+      // console.log('clientDataObj', clientDataObj)
+
+      // const decodedAttestationObj = CBOR.decode(credential.response.attestationObject);
+
+      // console.log('decodedAttestationObject', decodedAttestationObj);
+
       const credentialResponse = Client.publicKeyCredentialToJSON(credential)
       console.log('REGISTER RESPONSE', credentialResponse)
-    
+
       return await this.sendWebAuthnResponse(credentialResponse)
     } catch (err) {
       console.error(err)

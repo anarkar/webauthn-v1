@@ -21,10 +21,10 @@ import Dashboard from "./containers/Dashboard";
 function App() {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
-  // const [webauthn] = useState(
-  //   new Client({ pathPrefix: "http://localhost:3000/webauthn" })
-  // );
-  const [webauthn] = useState(new Client());
+  const [webauthn] = useState(
+    new Client({ pathPrefix: "http://localhost:3000/webauthn" })
+  );
+  // const [webauthn] = useState(new Client());
   useEffect(() => {
     localStorage.setItem("isValid", "yes");
   }, []);
