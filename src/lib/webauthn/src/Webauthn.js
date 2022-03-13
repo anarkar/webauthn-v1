@@ -72,6 +72,7 @@ class Webauthn {
   }
 
   register (options = {}) {
+    console.log('options', options);
     const usernameField = this.config.usernameField || options.usernameField
 
     return async (req, res, next) => {
@@ -116,7 +117,7 @@ class Webauthn {
 
       req.session.challenge = attestation.challenge
       req.session[usernameField] = username
-
+      attestation
       console.log('DONE', attestation)
 
       return res.status(200).json(attestation)
@@ -484,56 +485,7 @@ class Webauthn {
       }
 
       console.log('RESPONSE', response)
-    } else if(ctapMakeCredResp.fmt === 'packed' && ctapMakeCredResp.attStmt.hasOwnProperty('x5c')) {
-      let authrDataStruct = parseMakeCredAuthData(ctapMakeCredResp.authData);
-
-      if(!(authrDataStruct.flags & U2F_USER_PRESENTED))
-          throw new Error('User was NOT presented durring authentication!');
-
-      let clientDataHash  = hash(base64url.toBuffer(webAuthnResponse.response.clientDataJSON))
-      let publicKey       = COSEECDHAtoPKCS(authrDataStruct.COSEPublicKey)
-      let signatureBase   = Buffer.concat([ctapMakeCredResp.authData, clientDataHash]);
-
-      let PEMCertificate = ASN1toPEM(ctapMakeCredResp.attStmt.x5c[0]);
-      let signature      = ctapMakeCredResp.attStmt.sig;
-
-      let pem = Certificate.fromPEM(PEMCertificate);
-
-      // Getting requirements from https://www.w3.org/TR/webauthn/#packed-attestation
-      let aaguid_ext = pem.getExtension('1.3.6.1.4.1.45724.1.1.4')
-
-      response.verified = // Verify that sig is a valid signature over the concatenation of authenticatorData
-                          // and clientDataHash using the attestation public key in attestnCert with the algorithm specified in alg.
-                          verifySignature(signature, signatureBase, PEMCertificate) &&
-                          // version must be 3 (which is indicated by an ASN.1 INTEGER with value 2)
-                          pem.version == 3 &&
-                          // ISO 3166 valid country
-                          typeof iso_3166_1.whereAlpha2(pem.subject.countryName) !== 'undefined' &&
-                          // Legal name of the Authenticator vendor (UTF8String)
-                          pem.subject.organizationName &&
-                          // Literal string “Authenticator Attestation” (UTF8String)
-                          pem.subject.organizationalUnitName === 'Authenticator Attestation' &&
-                          // A UTF8String of the vendor’s choosing
-                          pem.subject.commonName &&
-                          // The Basic Constraints extension MUST have the CA component set to false
-                          !pem.extensions.isCA &&
-                          // If attestnCert contains an extension with OID 1.3.6.1.4.1.45724.1.1.4 (id-fido-gen-ce-aaguid)
-                          // verify that the value of this extension matches the aaguid in authenticatorData.
-                          // The extension MUST NOT be marked as critical.
-                          (aaguid_ext != null ?
-                            (authrDataStruct.hasOwnProperty('aaguid') ?
-                              !aaguid_ext.critical && aaguid_ext.value.slice(2).equals(authrDataStruct.aaguid) : false)
-                            : true);
-
-      if(response.verified) {
-          response.authrInfo = {
-              fmt: 'fido-u2f',
-              publicKey: base64url.encode(publicKey),
-              counter: authrDataStruct.counter,
-              credID: base64url.encode(authrDataStruct.credID)
-          }
-      }
-  } else {
+    } else {
       throw new Error(`Unsupported attestation format: ${ctapMakeCredResp.fmt}`);
     }
 

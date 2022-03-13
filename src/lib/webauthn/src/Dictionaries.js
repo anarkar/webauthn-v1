@@ -30,8 +30,8 @@ const Dictionaries = {
    */
   AttestationConveyancePreference: {
     NONE: 'none',
-    DIRECT: 'direct',
-    INDIRECT: 'indirect',
+    DIRECT: 'none',
+    INDIRECT: 'none',
   },
 
   /**

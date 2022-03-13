@@ -168,7 +168,8 @@ class AttestationChallengeBuilder {
     return this
   }
 
-  setAttestationType (attestation = Dictionaries.AttestationConveyancePreference.DIRECT) {
+  setAttestationType (attestation = Dictionaries.AttestationConveyancePreference.NONE) {
+    console.log('setAttestationType', attestation);
     const values = Object.values(Dictionaries.AttestationConveyancePreference)
 
     if (!values.includes(attestation)) {
