@@ -8,14 +8,14 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const session = require("express-session");
-const Webauthn = require("webauthn");
+const Webauthn = require("./lib/webauthn");
 var cors = require("cors");
 
 /**
  * Module Dependencies
  * @ignore
  */
-const LevelAdapter = require("webauthn/src/LevelAdapter");
+const LevelAdapter = require("./lib/webauthn/src/LevelAdapter");
 
 /**
  * Example
@@ -44,8 +44,8 @@ app.use(bodyParser.json());
 
 // Create webauthn
 const webauthn = new Webauthn({
-  origin: "https://tranquil-reaches-89447.herokuapp.com",
-  // origin: "http://localhost:3000",
+  // origin: "https://tranquil-reaches-89447.herokuapp.com",
+  origin: "http://localhost:3000",
   usernameField: "username",
   userFields: {
     username: "username",
