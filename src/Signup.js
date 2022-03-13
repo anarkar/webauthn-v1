@@ -30,20 +30,20 @@ export default function Signup(props) {
   const onRegister = () => {
     props.auth.register({ name, username }).then((res) => {
       console.log(res, "......response printing");
-      props.auth.completeRegistration(res).then((result) => {
-        console.log("-------------", result);
-        if (result) {
-          localStorage.setItem(
-            "userDetails",
-            JSON.stringify({ name, username })
-          );
-          res.status === "ok"
-            ? history("/dashboard")
-            : window.alert("Error occured");
-        } else {
-          window.alert("Error occured");
-        }
-      });
+      if (res) {
+        localStorage.setItem(
+          "userDetails",
+          JSON.stringify({ name, username })
+        );
+        res.status === "ok"
+          ? history("/dashboard")
+          : window.alert("Error occured");
+      } else {
+        window.alert("Error occured");
+      }
+      // props.auth.completeRegistration(res).then((result) => {
+      //   console.log("-------------", result);
+      // });
     });
   };
   return (
