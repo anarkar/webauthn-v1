@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col, Form, Button, Navbar } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
@@ -11,20 +11,21 @@ import {
 } from "react-icons/fa";
 import headerImg from "./assets/logo2.png";
 import TextField from "@mui/material/TextField";
-import Checkbox from "@mui/material/Checkbox";
-
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from "@mui/material/IconButton";
+import ModalPopup from "./components/ModalPopup";
 
 export default function Login(props) {
   const history = useNavigate();
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [showPassword, setShowPassword] = React.useState(false);
-  const [publicShared, setPublicShared] = React.useState(false);
-  const [biometric, setBiometric] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
+  const [userDetail, setUserDetail] = React.useState("");
 
-  const onLogin = (userDetails) => {
+  const onLogin = () => {
+    let userDetails = JSON.parse(localStorage.getItem("userDetails"));
+
     console.log(userDetails);
 
     props.auth.login({ username: userDetails.username }).then((res) => {
@@ -32,13 +33,14 @@ export default function Login(props) {
     });
   };
 
-  useMemo(() => {
-    console.log("This is useMemo");
+  useEffect(() => {
     let userDetails = localStorage.getItem("userDetails");
     if (userDetails) {
       userDetails = JSON.parse(userDetails);
-      console.log(userDetails);
-      onLogin(userDetails);
+      setUserDetail(JSON.parse(localStorage.getItem("userDetails")).username);
+      setOpen(true);
+    } else {
+      setOpen(false);
     }
   }, []);
 
@@ -148,6 +150,12 @@ export default function Login(props) {
             </div>
           </Col>
         </Row>
+        <ModalPopup
+          open={open}
+          setOpen={setOpen}
+          username={userDetail}
+          isLogin={() => onLogin()}
+        />
       </Container>
     </div>
   );

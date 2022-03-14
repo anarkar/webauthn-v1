@@ -29,12 +29,8 @@ export default function Signup(props) {
 
   const onRegister = async () => {
     props.auth.register({ name, username }).then((res) => {
-      console.log(res, "......response printing");
       if (res) {
-        localStorage.setItem(
-          "userDetails",
-          JSON.stringify({ name, username })
-        );
+        localStorage.setItem("userDetails", JSON.stringify({ name, username }));
         res.status === "ok"
           ? history("/dashboard")
           : window.alert("Error occured");

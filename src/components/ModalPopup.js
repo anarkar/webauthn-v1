@@ -15,9 +15,9 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
-export default function ModalPopup({ open, setOpen, username }) {
+export default function ModalPopup({ open, setOpen, username, isLogin }) {
   return (
-    <div className="wrapper">
+    <div className="wrapper" style={{ zIndex: 9999 }}>
       <Modal
         open={open}
         onClose={() => {
@@ -43,6 +43,7 @@ export default function ModalPopup({ open, setOpen, username }) {
               variant="contained"
               disableElevation
               style={{ width: "100%", marginTop: "20px" }}
+              onClick={isLogin}
             >
               {`Signing in as ${username ? username : "No user"}`}
             </Button>

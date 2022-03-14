@@ -51,7 +51,11 @@ function App() {
             path="/login"
             element={<Login auth={webauthn} />}
           ></Route>
-          <Route exact path="/dashboard" element={<Dashboard />}></Route>
+          <Route
+            exact
+            path="/dashboard"
+            element={<Dashboard logout={onLogout} />}
+          ></Route>
         </Routes>
       </Router>
     </div>

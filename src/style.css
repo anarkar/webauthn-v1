@@ -1,6 +1,6 @@
 .navbar-wrapper {
   border-bottom: 1px solid black;
-  z-index: 9999;
+  z-index: 99;
   position: fixed;
   width: 100%;
   background: white;

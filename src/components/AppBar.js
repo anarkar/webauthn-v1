@@ -14,12 +14,13 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import headerImg from "../assets/logo2.png";
 import { useNavigate } from "react-router-dom";
 
 const pages = [];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-const ResponsiveAppBar = () => {
+const ResponsiveAppBar = ({ logout }) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const history = useNavigate();
@@ -38,6 +39,7 @@ const ResponsiveAppBar = () => {
   const handleCloseUserMenu = (value) => {
     if (value === "Logout") {
       history("/login");
+      logout();
     }
     setAnchorElUser(null);
   };
@@ -92,22 +94,23 @@ const ResponsiveAppBar = () => {
             </Menu>
           </Box>
           {/* //    src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" /> */}
-          <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
-            <Avatar
-              alt="logo"
-              src="https://logos-world.net/wp-content/uploads/2021/04/Expedia-New-Logo.png"
-            />
-          </IconButton>
+          <div
+            onClick={handleOpenUserMenu}
+            sx={{ p: 1 }}
+            style={{ width: "90%" }}
+          >
+            <img alt="logo" src={headerImg} style={{ width: 150 }} />
+          </div>
           {/* <img src={logoImg} alt="img"/> */}
           {/* <img alt="logoimg"  src={"https://logos-world.net/wp-content/uploads/2021/04/Expedia-New-Logo.png"}/> */}
-          <Typography
+          {/* <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
             Expedia
-          </Typography>
+          </Typography> */}
           <Box sx={{ display: { xs: "flex" } }}>
             {pages.map((page) => (
               <Button
