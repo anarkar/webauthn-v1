@@ -4,6 +4,8 @@ import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
+import { useNavigate } from "react-router-dom";
+
 const style = {
   position: "absolute",
   top: "34%",
@@ -17,6 +19,13 @@ const style = {
   marginTop: "10%",
 };
 export default function ModalPopup({ open, setOpen, username, isLogin }) {
+  const history = useNavigate();
+
+  const registerUser = () => {
+    setOpen((value) => !value);
+    history("/");
+  };
+
   return (
     <div className="wrapper" style={{ zIndex: 9999 }}>
       <Modal
@@ -60,7 +69,7 @@ export default function ModalPopup({ open, setOpen, username, isLogin }) {
               variant="contained"
               disableElevation
               style={{ width: "100%", marginTop: "20px" }}
-              onClick={() => setOpen((value) => !value)}
+              onClick={registerUser}
             >
               Sign up it's free
             </Button>
