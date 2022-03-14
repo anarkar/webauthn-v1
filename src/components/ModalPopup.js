@@ -55,7 +55,14 @@ export default function ModalPopup({ open, setOpen, username, isLogin }) {
               marginBottom: "20px",
             }}
           >
-            <b style={{ color: "blue" }}>Sign up it's free</b>
+            <Button
+              variant="contained"
+              disableElevation
+              style={{ width: "100%", marginTop: "20px" }}
+              onClick={() => setOpen((value) => !value)}
+            >
+              Sign up it's free
+            </Button>
           </div>
           <div className="defaultMargin">List of favorites</div>
           <div className="defaultMargin">Expedia Rewards</div>
