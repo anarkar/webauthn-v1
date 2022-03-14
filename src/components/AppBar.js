@@ -16,11 +16,20 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import headerImg from "../assets/logo2.png";
 import { useNavigate } from "react-router-dom";
-
+const style = {
+  fontSize: "10px",
+  whiteSpace: "nowrap",
+  overflow: "hidden",
+  textOverflow: "ellipsis",
+  width: "40px",
+  color: "black",
+  margin: "5px 2px",
+  fontWeight: 800,
+};
 const pages = [];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-const ResponsiveAppBar = ({ logout }) => {
+const ResponsiveAppBar = ({ logout, userDetail = { username: "" } }) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const history = useNavigate();
@@ -137,10 +146,13 @@ const ResponsiveAppBar = ({ logout }) => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar
-                  alt="Remy Sharp"
-                  src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
-                />
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <Avatar
+                    alt="Remy Sharp"
+                    src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+                  />
+                  <div style={style}> {userDetail.username}</div>
+                </div>
               </IconButton>
             </Tooltip>
             <Menu

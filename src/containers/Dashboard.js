@@ -16,7 +16,10 @@ export default function Dashboard({ logout }) {
   return (
     <>
       <Snackbar />
-      <AppBar logout={logout} />
+      <AppBar
+        logout={logout}
+        userDetail={JSON.parse(localStorage.getItem("userDetails"))}
+      />
       <Tabs />
       <Filter />
     </>

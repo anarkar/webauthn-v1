@@ -55,7 +55,7 @@ export default function ModalPopup({ open, setOpen, username, isLogin }) {
               style={{ width: "100%", marginTop: "20px" }}
               onClick={isLogin}
             >
-              {`Signing in as ${username ? username : "No user"}`}
+              {`Signed in as ${username ? username : "No user"}`}
             </Button>
           </div>
           <div
