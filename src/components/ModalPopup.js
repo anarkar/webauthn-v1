@@ -14,6 +14,7 @@ const style = {
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
+  marginTop: "10%",
 };
 export default function ModalPopup({ open, setOpen, username, isLogin }) {
   return (
