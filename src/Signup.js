@@ -32,7 +32,7 @@ export default function Signup(props) {
       if (res) {
         localStorage.setItem("userDetails", JSON.stringify({ name, username }));
         res.status === "ok"
-          ? history("/dashboard")
+          ? window.location.replace(res.user.callback)
           : window.alert("Error occured");
       } else {
         window.alert("Error occured");
