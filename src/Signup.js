@@ -34,7 +34,7 @@ export default function Signup(props) {
         localStorage.setItem("userDetails", JSON.stringify({ name, username }));
         res.status === "ok"
           ? // ? console.log(res.user.callback, ".....res...")
-            window.location.assign(`https://${res.user.callback}`)
+            window.location.assign(res.user.callback)
           : // history("www.google.com", { replace: true })
             window.alert("Error occured");
       } else {
