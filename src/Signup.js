@@ -29,16 +29,20 @@ export default function Signup(props) {
 
   const onRegister = async () => {
     props.auth.register({ name, username }).then((res) => {
+      console.log(res.user.callback, ".....res...");
       if (res) {
         localStorage.setItem("userDetails", JSON.stringify({ name, username }));
         res.status === "ok"
-          ? window.location.replace(res.user.callback)
-          : window.alert("Error occured");
+          ? // ? console.log(res.user.callback, ".....res...")
+            window.location.assign(`https://${res.user.callback}`)
+          : // history("www.google.com", { replace: true })
+            window.alert("Error occured");
       } else {
         window.alert("Error occured");
       }
     });
   };
+
   return (
     <div style={{ marginBottom: "100px" }}>
       <Navbar className="navbar-wrapper">
